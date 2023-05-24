@@ -16,7 +16,7 @@ lang: en
 timezone: Asia/Seoul
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
-# ↓ --------------------------
+# ↓ -------------------------- dfs
 
 title: Chirpy # the main title
 
@@ -26,10 +26,10 @@ description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: "https://SincerityHun.github.io"
+url: "https://sincerityhun.github.io"
 
 github:
-  username: github_username # change to your github username
+  username: SincerityHun # change to your github username
 
 twitter:
   username: twitter_username # change to your twitter username
