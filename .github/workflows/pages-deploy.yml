@@ -1,71 +1,69 @@
-name: "Build and Deploy"
-on:
-  push:
-    branches:
+name: "Build and Deploy" # Workflow 이름을 "Build and Deploy"로 설정
+on: # Workflow가 언제 실행될지 정의
+  push: # "main" or "master" branch에 push될 때 Workflow 실행
+    branches: # Workflow 실행 Branch들 정의
       - main
       - master
-    paths-ignore:
+    paths-ignore: # 단, '.gitignore','README.md', 'LICENSE' 파일에 대한 변경은 Workflow 실행하지 않는다.
       - .gitignore
       - README.md
       - LICENSE
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  workflow_dispatch: # Workflow를 수동으로 실행 가능
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+permissions: # Workflow 실행 중 사용되는 Github 토큰에 대한 권한 설정
+  contents: read # Repository 컨텐츠에 대한 읽기 권한 부여
+  pages: write # Github Pages에 대한 쓰기 권한 부여
+  id-token: write # ID 토큰에 대한 쓰기 권한 부여
 
-# Allow one concurrent deployment
-concurrency:
+concurrency: #동시에 하나의 Workflow 인스턴스만 실행
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: true #새 Instance가 시작되면 이전 Instance는 취소
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+jobs: # Workflow 작업 정의
+  build: # 첫 번째 작업: build
+    runs-on: ubuntu-latest # 이 작업은 'ubuntu-latest' 환경에서 실행
 
-    steps:
-      - name: Checkout
+    steps: # build 작업에 포함된 단계
+      - name: Checkout # Workflow가 코드를 runner에 checkout
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 0 # Repository의 모든 커밋을 가져오도록 설정
           # submodules: true
           # If using the 'assets' git submodule from Chirpy Starter, uncomment above
           # (See: https://github.com/cotes2020/chirpy-starter/tree/main/assets)
 
-      - name: Setup Pages
+      - name: Setup Pages # Github Pages 설정을 준비
         id: pages
         uses: actions/configure-pages@v3
 
-      - name: Setup Ruby
+      - name: Setup Ruby # Ruby 환경 설정
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3   # reads from a '.ruby-version' or '.tools-version' file if 'ruby-version' is omitted
-          bundler-cache: true
+          bundler-cache: true # Bundler cache를 사용해 dependencies 설치 시간 단축
 
-      - name: Build site
+      - name: Build site # Jekyll을 사용해 사이트 빌드
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
         env:
-          JEKYLL_ENV: "production"
+          JEKYLL_ENV: "production" # Jekyll 환경을 'production'으로 설정
 
-      - name: Test site
+      - name: Test site # Build 완료된 사이트를 htmlproofer을 사용해 TEST
         run: |
           bundle exec htmlproofer _site --disable-external --check-html --allow_hash_href
 
-      - name: Upload site artifact
+      - name: Upload site artifact # Build된 사이트를 Artifact로 업로드
         uses: actions/upload-pages-artifact@v1
         with:
           path: "_site${{ steps.pages.outputs.base_path }}"
 
-  deploy:
+  deploy: # 두 번째 작업: 'deploy' 
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
+    needs: build # 첫 번째 작업인 'build'가 완료 된 후에 실행
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages # 생성된 정적 웹사이트를 Github Pages에 배포
         id: deployment
         uses: actions/deploy-pages@v1
