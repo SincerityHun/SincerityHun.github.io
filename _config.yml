@@ -20,7 +20,7 @@ timezone: Asia/Seoul
 
 title: Seonghun Jung # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the sub-title
+tagline: SKKU Computer Science # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
@@ -32,7 +32,7 @@ github:
   username: SincerityHun # change to your github username
 
 twitter:
-  username: twitter_username # change to your twitter username
+  username: j_s_hhh # change to your twitter username
 
 social:
   # Change to your full name.
@@ -41,7 +41,7 @@ social:
   email: mark.seonghun.jung@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your twitter homepage
+    - https://instagram.com/j_s_hhh # change to your twitter homepage
     - https://github.com/SincerityHun # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
@@ -70,7 +70,7 @@ google_analytics:
 #     light  - Use the light color scheme
 #     dark   - Use the dark color scheme
 #
-theme_mode: # [light|dark]
+theme_mode: dark
 
 # The CDN endpoint for images.
 # Notice that once it is assigned, the CDN url
@@ -80,7 +80,7 @@ theme_mode: # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: ./assets/img/avatar/avatarPic.JPG
 
 # boolean type, the global switch for TOC in posts.
 toc: true
