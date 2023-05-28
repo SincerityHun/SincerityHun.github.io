@@ -9,10 +9,17 @@ order: 4
 - Hello, I'm Seonghun Jung, a second-year student at Sungkyunkwan University.
   I'm currentrly majoring in Computer Science.
   > <https://cs.skku.edu/en>
-- I have a strong passion for learning.
+
+- Who I am as developer
 1. High Flexibility
 2. Never afraid to do something I haven't done.
 3. Ability to work with a team
+4. Strong Passion for Learning
+
+- Career
+1. Team leader of Deep Plant's industry-academic cooperation program
+> Theme: Development of Meat Image and Taste Data Collectkon and Storage System
+> Advisor: Young-sook Hwang Prof.
 
 ---
 
