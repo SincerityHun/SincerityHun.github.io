@@ -1,45 +1,60 @@
-# Chirpy Starter [![Gem Version](https://img.shields.io/gem/v/jekyll-theme-chirpy)](https://rubygems.org/gems/jekyll-theme-chirpy) [![GitHub license](https://img.shields.io/github/license/cotes2020/chirpy-starter.svg?color=blue)][mit]
+# SincerityHun's Dev Blog
 
-When installing the [**Chirpy**][chirpy] theme through [RubyGems.org][gem], Jekyll can only read files in the folders `/_data`, `/_layouts`, `/_includes`, `/_sass` and `/assets`, as well as a small part of options of the `/_config.yml` file from the theme's gem. If you have ever installed this theme gem, you can use the command `bundle info --path jekyll-theme-chirpy` to locate these files.
+- 블로그는 몰랐던 걸 해결한 과정을 담는 곳
+- 아는걸 정리하는 곳 ❌
+- 몰랐던걸 알아가며 아는게 정리된다.
+- 관심분야: System SW, Cloud Computing, AI, Backend Service
 
-The Jekyll team claims that this is to leave the ball in the user’s court, but this also results in users not being able to enjoy the out-of-the-box experience when using feature-rich themes.
+Category IN Dev Blog
 
-To fully use all the features of **Chirpy**, you need to copy the other critical files from the theme's gem to your Jekyll site. The following is a list of targets:
+### Bookmark
 
-```shell
-.
-├── _config.yml
-├── _plugins
-├── _tabs
-└── index.html
-```
+[Seonghun Jung](https://sincerityhun.github.io/)
 
-To save you time, and also in case you lose some files while copying, we extract those files/configurations of the latest version of the **Chirpy** theme and the [CD][CD] workflow to here, so that you can start writing in minutes.
+---
 
-## Prerequisites
+### 1. Paper
 
-Follow the instructions in the [Jekyll Docs](https://jekyllrb.com/docs/installation/) to complete the installation of the basic environment. [Git](https://git-scm.com/) also needs to be installed.
+<aside>
+💡 Computer System Lab
+</aside>
 
-## Installation
+---
 
-Sign in to GitHub and [**use this template**][use-template] to generate a brand new repository and name it `USERNAME.github.io`, where `USERNAME` represents your GitHub username.
+### 2. Algorithm(C++)
 
-Then clone it to your local machine and run:
+<aside>
+💡 매일 하나
+월 - S2
+화 - S2
+수 - S2
+목 - S1
+금 - G4
+토 - G4
+일 - 블로그 정리
+</aside>
 
-```
-$ bundle
-```
+---
 
-## Usage
+### 3. Project
 
-Please see the [theme's docs](https://github.com/cotes2020/jekyll-theme-chirpy#documentation).
+<aside>
+💡 [ 포스트 내용 ]
 
-## License
-
-This work is published under [MIT][mit] License.
-
-[gem]: https://rubygems.org/gems/jekyll-theme-chirpy
-[chirpy]: https://github.com/cotes2020/jekyll-theme-chirpy/
-[use-template]: https://github.com/cotes2020/chirpy-starter/generate
-[CD]: https://en.wikipedia.org/wiki/Continuous_deployment
-[mit]: https://github.com/cotes2020/chirpy-starter/blob/master/LICENSE
+- 프로젝트 개요
+  - 목표
+  - 개발 내용
+  - 담당 역할 및 성과
+  - 사용한 기술 스택
+    - Frontend, Backend 나눠서
+    - 언어, 프레임 워크
+- Github
+- 주요 기능 설명
+  - Service Flow
+  - DB ERD
+  - API 설계서
+  - Architecture 명세서
+- Reference
+- Demo 영상
+- 진행 도중 겪었던 Error 상황 - 흔히 겪는 몰랐던 점을 적는게 아니라 - 공식 Document을 따라서 적용해봤는데 안되는 경우!!
+</aside>
