@@ -50,13 +50,18 @@ public:
 ### 4. Example Walkthrough
 
 > n = 6
+
 - true
+
 > n = 1
+
 - false
+
 > n = 14
+
 - false
 
 ### 5. Conclusion
 
-- %= Operator changes value of origin left value
-- Using If and && Operator is not good for minimize time complexity.
+- "%=" Operator changes value of origin left value
+- Using "If" and "&&" Operator is not good for minimize time complexity.
