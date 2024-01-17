@@ -41,7 +41,7 @@ jobs: # Workflow 작업 정의
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3   # reads from a '.ruby-version' or '.tools-version' file if 'ruby-version' is omitted
-          bundler-cache: true # Bundler cache를 사용해 dependencies 설치 시간 단축
+          bundler-cache: false # Bundler cache를 사용해 dependencies 설치 시간 단축
 
       - name: Build site # Jekyll을 사용해 사이트 빌드
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
