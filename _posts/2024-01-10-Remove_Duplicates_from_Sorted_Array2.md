@@ -15,7 +15,38 @@ tags: [c++, leet code] # TAG names should always be lowercase
 ### 3. Implementation
 
 ```cpp
-
+class Solution
+{
+public:
+    int removeDuplicates(vector<int> &nums)
+    {
+        int cur = nums[0];
+        int flag = 0;
+        int len = nums.size();
+        for (auto it = nums.begin(); it != nums.end(); it++)
+        {
+            if (*it == cur)
+            {
+                if (flag > 1)
+                {
+                    nums.erase(it);
+                    it--;
+                    len--;
+                }
+                else
+                {
+                    flag++;
+                }
+            }
+            else
+            {
+                cur = *it;
+                flag = 1;
+            }
+        }
+        return len;
+    }
+};
 ```
 
 ### 4. Example Walkthrough
