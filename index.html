@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Seonghun Jung</title>
+  <meta name="description" content="Seonghun Jung is an M.S. student at KAIST (CASYS Lab), studying emerging AI workloads and using their computational characteristics to design efficient serving systems and hardware." />
+  <meta name="author" content="Seonghun Jung" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Seonghun Jung" />
+  <meta property="og:description" content="M.S. student at KAIST (CASYS Lab), studying emerging AI workloads to design efficient serving systems and hardware." />
+  <meta property="og:url" content="https://sincerityhun.github.io" />
+
+  <!-- Favicons (reused from previous site) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png" />
+  <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico" />
+
+  <!-- Type: Tahoma system-wide (no webfont loading needed) -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#top">Seonghun Jung</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#awards">Awards</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container" id="top">
+
+    <!-- ===================== HERO ===================== -->
+    <header class="hero">
+      <img class="hero-photo" src="/assets/img/avatar/avatarPic.jpg" alt="Portrait of Seonghun Jung" />
+      <div class="hero-body">
+        <h1 class="hero-name">Seonghun Jung</h1>
+
+        <p class="hero-role">M.S. Student, School of Computing, KAIST &middot; <a href="https://casyslab.kaist.ac.kr/" target="_blank" rel="noopener">CASYS Lab</a></p>
+<!-- 
+        <p class="hero-thesis">I am mainly interested in designing efficient serving systems and hardware for emerging AI
+          workloads.</p> -->
+
+        <ul class="contact">
+          <li><a href="mailto:mark.seonghun.jung@gmail.com">mark.seonghun.jung@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/seonghun-jung/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/SincerityHun" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="/assets/resume.pdf" target="_blank" rel="noopener">CV</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="section">
+      <h2>About</h2>
+    
+      <p>
+        I am a third-semester M.S. student in the <a href="https://cs.kaist.ac.kr/" target="_blank" rel="noopener">School of
+          Computing at KAIST</a>,
+        advised by <a href="https://jaehyuk-huh.github.io/" target="_blank" rel="noopener">Jaehyuk Huh</a> at the
+        <a href="https://casyslab.kaist.ac.kr/" target="_blank" rel="noopener">Computer Architecture and Systems Lab (CASYS)</a>. I obtained my B.S. in Computer Science and Engineering at
+        <a href="https://www.skku.edu/eng/" target="_blank" rel="noopener">Sungkyunkwan University</a>,
+        where I was fortunate to work with <a href="http://csl.skku.edu/" target="_blank" rel="noopener">Euiseong Seo</a>
+        on GPU resource scheduling for distributed deep learning on Kubernetes-based cloud platforms.
+        <!-- I am currently looking for Ph.D. programs. -->
+      </p>
+    
+      <h3>Research Interests</h3>
+      <ul class="interests">
+        <li>Computer Systems and Architecture</li>
+        <li>Efficient Serving Systems for Emerging AI Workloads</li>
+        <li>System and Architecture Co-Design for Heterogeneous Accelerators</li>
+      </ul>
+    </section>
+
+    <!-- ===================== PUBLICATIONS ===================== -->
+    <section id="publications" class="section">
+      <h2>Publications</h2>
+
+      <ol class="pub-list">
+        <li class="pub">
+          <div class="pub-title">Beyond LLM Serving: Characterizing Vision-Language-Action Workloads for Embodied AI System Design</div>
+          <div class="pub-authors"><strong>Seonghun Jung</strong>, Sieun Moon, Jiyoung Jeong, Jimin Lee, and Jaehyuk Huh</div>
+          <div class="pub-venue">ASPLOS 2027 (To Appear)</div>
+          <!-- <p>Across four VLA architectures and three hardware platforms, we show how model&ndash;hardware interactions shape inference bottlenecks and how deployment objectives change the preferred configuration.</p> -->
+          <details class="pub-details">
+          <summary>Paper summary</summary>
+          <div class="pub-summary">
+            <p><span class="pub-label">Problem.</span> VLA inference operates within a robot&rsquo;s control loop, making latency, energy consumption, and task success joint concerns for system design.</p>
+            <p><span class="pub-label">Approach.</span> We characterized four VLA architectures on an edge GPU server and two onboard SoCs through stage-level profiling, roofline analysis, DVFS sweeps, and 43,200 closed-loop episodes.</p>
+            <p><span class="pub-label">Findings.</span> Model architecture and hardware balance jointly determine stage bottlenecks. Across the evaluated configurations, the preferred operating point changes with latency, energy, and task-success targets, revealing trade-offs that inform runtime and accelerator design.</p>
+          </div>
+          </details>
+        </li>
+      </ol>
+
+      <!-- Template for the next publication:
+        <li class="pub">
+          <div class="pub-title">Paper Title Goes Here</div>
+          <div class="pub-authors"><strong>Seonghun Jung</strong>, Co-Author One, Co-Author Two</div>
+          <div class="pub-venue">Venue / Conference / Journal, Year</div>
+          <div class="pub-links">
+            <a href="#">PDF</a> &middot; <a href="#">arXiv</a> &middot; <a href="#">Code</a>
+          </div>
+        </li>
+      -->
+    </section>
+
+    <!-- ===================== PROJECTS ===================== -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+
+      <ol class="pub-list">
+        <li class="pub">
+          <div class="pub-title">ProfilingSense: A Non-Intrusive Kubernetes Scheduler for Distributed Deep Learning Workloads Based on Resource-Efficiency Profiling</div>
+          <div class="pub-authors">B.S. Graduation Project, advised by <a href="http://csl.skku.edu/" target="_blank" rel="noopener">Prof. Euiseong Seo</a></div>
+          <div class="pub-venue">Sep. 2024 &ndash; May 2025</div>
+          <details class="pub-details">
+          <summary>Project summary</summary>
+          <div class="pub-summary">
+            <p><span class="pub-label">Problem.</span> Kubernetes schedules pods based on requested resources but does not account for two defining properties of distributed training: a job must acquire all of its GPUs together, and different jobs achieve very different throughput from the same resources. Existing ML schedulers address these issues through training-code modifications, execution history, GPU sharing, or dynamic reallocation, making them difficult to adopt in existing clusters.</p>
+            <p><span class="pub-label">Approach.</span> ProfilingSense lets each job reveal its own resource efficiency through a short, isolated pre-flight run at its requested GPU count. Without modifying user code, it extracts iteration throughput from standard training logs and combines measured throughput-per-resource with waiting-time-based aging. It then gang-schedules jobs in priority order, changing only when jobs run rather than how they train or how many GPUs they receive.</p>
+            <p><span class="pub-label">Findings.</span> We profiled five deep-learning workloads on a six-GPU testbed and used the measurements to replay one week of the Microsoft Philly trace with 2,312 jobs at an 864-GPU scale. ProfilingSense reduced average job-completion time by 18.1% in the physical evaluation and by 22.1% in the trace-driven simulation relative to the default Kubernetes scheduler. Its resource-efficiency ordering further reduced average job-completion time by 4.5% and maximum waiting time by 12.7% over FIFO gang scheduling, showing that meaningful scheduling gains are possible from execution order alone, without code changes, prior history, GPU sharing, or dynamic reallocation.</p>
+          </div>
+          </details>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section id="experience" class="section">
+      <h2>Experience</h2>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title"><a href="https://www.samsung-dsrecruit.com/recruits/division_intro/detail/ai_center.php" target="_blank" rel="noopener">Samsung Electronics &middot; AI Center</a></span>
+          <span class="entry-date">Jan. 2025 &ndash; Feb. 2025</span>
+        </div>
+        <div class="entry-sub">
+          <span class="entry-role">Software Engineer Intern</span>
+          <span class="entry-place">Hwaseong, Gyeonggi-do</span>
+        </div>
+        <ul class="bullets">
+          <li>Traced slow response times on a semiconductor equipment data-analysis platform using Elastic APM/RUM and the ELK stack, reducing page-load latency by 26.45%.</li>
+          <li>Implemented caching and optimized multi-table join queries in personalized dashboards, reducing server processing time by 6.49%.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title"><a href="https://www.samsung-dsrecruit.com/recruits/division_intro/detail/ai_center.php" target="_blank" rel="noopener">Samsung Electronics &middot; AI Center</a></span>
+          <span class="entry-date">Sep. 2024 &ndash; Dec. 2024</span>
+        </div>
+        <div class="entry-sub">
+          <span class="entry-role">MLOps Engineer Intern</span>
+          <span class="entry-place">Hwaseong, Gyeonggi-do</span>
+        </div>
+        <ul class="bullets">
+          <li>Developed the multi-tenant backend for a distributed hyperparameter-optimization MLOps system on Ray Cluster and Kubeflow, used by 100+ Samsung engineers. The FastAPI backend authenticated tenants with Keycloak JWT, tracked job state in Redis, and scheduled shared GPU resources through Volcano.</li>
+          <li>Automated the platform's deployment with a CI/CD pipeline on ArgoCD and Helm, and centralized its logs with FluentBit and OpenSearch.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title"><a href="http://csl.skku.edu/" target="_blank" rel="noopener">Computer System Lab</a> <span class="advisor">advised by Prof. Euiseong Seo</span></span>
+          <span class="entry-date">Sep. 2023 &ndash; Jun. 2024</span>
+        </div>
+        <div class="entry-sub">
+          <span class="entry-role">Undergraduate Researcher</span>
+          <span class="entry-place">Suwon, Gyeonggi-do</span>
+        </div>
+        <ul class="bullets">
+          <li>Designed an elastic training platform that reallocates GPUs across distributed deep-learning jobs at runtime, using a scheduling algorithm based on job throughput gradients to improve cluster utilization.</li>
+          <li>Built the underlying 4-node Kubernetes cluster with Containerd, the Kubeflow MPI Operator, and InfiniBand to run Elastic Horovod training at scale.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== EDUCATION ===================== -->
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Korea Advanced Institute of Science and Technology (KAIST)</span>
+          <span class="entry-date">Sep. 2025 &ndash; Expected Aug. 2027</span>
+        </div>
+        <div class="entry-sub">
+          <span class="entry-role">M.S. in Computer Science, School of Computing</span>
+          <span class="entry-place">Daejeon, Republic of Korea</span>
+        </div>
+        <ul class="bullets">
+          <li>Overall GPA: 4.2 / 4.3</li>
+          <li>Advised by Prof. Jaehyuk Huh at the <a href="https://casyslab.kaist.ac.kr/" target="_blank" rel="noopener">Computer Architecture and Systems Lab (CASYS)</a></li>
+          <li>Recipient of the National Full Graduate Scholarship (Fall 2025 &ndash; Spring 2027)</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <span class="entry-title">Sungkyunkwan University</span>
+          <span class="entry-date">Mar. 2020 &ndash; Aug. 2025</span>
+        </div>
+        <div class="entry-sub">
+          <span class="entry-role">B.S. in Computer Science and Engineering, Magna Cum Laude</span>
+          <span class="entry-place">Suwon, Gyeonggi-do</span>
+        </div>
+        <ul class="bullets">
+          <li>Overall GPA: 4.2 / 4.5</li>
+          <li>Recipient of the Sungkyun Software and Research Promotion Scholarships (full tuition, 8 semesters)</li>
+          <li>Includes 18 months of mandatory military service (Jan. 2021 &ndash; Jul. 2022)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== OTHER PROJECTS (collapsed by default) ===================== -->
+    <!-- <section id="other-projects" class="section">
+      <details class="collapsible">
+      <summary><h2>Other Projects</h2></summary>
+
+      <ol class="pub-list">
+        <li class="pub">
+          <div class="pub-title">Meat Image and Sensory-Data Collection Platform for AI-Based Taste Prediction</div>
+          <div class="pub-authors">Industry&ndash;Academic Partnership Project</div>
+          <div class="pub-venue">May 2023 &ndash; Dec. 2023</div>
+          <details class="pub-details">
+          <summary>Project summary</summary>
+          <div class="pub-summary">
+            <p><span class="pub-label">Problem.</span> The traits consumers actually care about in meat, such as tenderness, juiciness, and flavor, are only known after sensory evaluation. Predicting them automatically from a photo requires a large dataset in which each meat image is paired with detailed sensory (taste) data collected in the field, and no such dataset or collection system existed.</p>
+            <p><span class="pub-label">Approach.</span> Built the end-to-end data platform for producing that dataset. Specialized mobile capture equipment at slaughterhouses photographs each cut and uploads it to a Flask backend, where slaughterhouse staff and corporate researchers attach the corresponding sensory records. A PostgreSQL data-management layer links every image to its sensory data, and the whole stack is deployed through a Docker-based CI/CD pipeline on AWS.</p>
+            <p><span class="pub-label">Contribution.</span> The resulting paired image&ndash;sensory dataset became the training foundation for the project&rsquo;s AI model, built by the modeling team, that classifies and predicts detailed taste attributes from meat images and in turn underpins a personalized meat-recommendation service for consumers and buyers.</p>
+          </div>
+          </details>
+        </li>
+      </ol>
+      </details>
+    </section> -->
+
+    <!-- ===================== AWARDS & CERTIFICATIONS ===================== -->
+    <section id="awards" class="section">
+      <h2>Awards &amp; Certifications</h2>
+
+      <div class="award-group">
+        <h3>Awards</h3>
+        <ul class="bullets">
+          <li>Outstanding Teaching Assistant Award, KAIST (System Programming 2025, Computer Organization 2026)</li>
+        </ul>
+      </div>
+
+      <div class="award-group">
+        <h3>Certifications</h3>
+        <ul class="bullets">
+          <li>Certified Kubernetes Administrator, The Linux Foundation (2025)</li>
+          <li>S/W Certification Professional, Samsung Electronics DX (2024)</li>
+        </ul>
+      </div>
+
+      <div class="award-group">
+        <h3>Competitions</h3>
+        <ul class="bullets">
+          <li>15th Place, SKKU Programming Competition (2024 &amp; 2025)</li>
+          <li>Gold Prize (2nd Place), SKKU Hackathon (2023)</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year">2026</span> Seonghun Jung ·
+      <a href="mailto:mark.seonghun.jung@gmail.com">mark.seonghun.jung@gmail.com</a> ·
+      <a href="/assets/resume.pdf" target="_blank" rel="noopener">CV</a>
+    </p>
+  </footer>
+
+  <script>
+    // Auto-update footer year (static-safe).
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Open collapsed sections when printing so their content is not lost.
+    window.addEventListener('beforeprint', function () {
+      document.querySelectorAll('details').forEach(function (d) { d.open = true; });
+    });
+
+    // Scrollspy: mark the current section in the nav. Pure class toggle, so it
+    // is unaffected by prefers-reduced-motion.
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+      var map = {};
+      links.forEach(function (a) {
+        var id = a.getAttribute('href').slice(1);
+        if (id) map[id] = a;
+      });
+      var sections = Object.keys(map).map(function (id) { return document.getElementById(id); }).filter(Boolean);
+      if (!('IntersectionObserver' in window) || !sections.length) return;
+
+      var current = null;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) current = e.target.id;
+        });
+        links.forEach(function (a) { a.classList.remove('is-current'); });
+        if (current && map[current]) map[current].classList.add('is-current');
+      }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+      sections.forEach(function (s) { io.observe(s); });
+    })();
+  </script>
+</body>
+</html>

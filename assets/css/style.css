@@ -1,0 +1,469 @@
+/* ============================================================
+   Seonghun Jung — researcher homepage
+   Design system: "ink on technical paper".
+   Single system typeface: Tahoma everywhere (display, prose, and
+   metadata), differentiated by size, weight, and letter-spacing.
+   Light theme only.
+   ============================================================ */
+
+:root {
+  --bg:            #fcfcfd;   /* cool paper, deliberately not cream */
+  --ink:           #16181d;   /* near-black with a cool undertone  */
+  --muted:         #5b6472;   /* slate for secondary text          */
+  --faint:         #98a1b0;   /* tertiary / metadata               */
+  --rule:          #e7e9ee;   /* hairlines                         */
+  --rule-strong:   #d4d8e0;
+  --rule-heading:  #8b95a5;   /* darker rule under section titles  */
+  --accent:        #2b41cc;   /* fountain-pen indigo               */
+  --accent-strong: #1f2f9c;   /* hover / button                    */
+  --accent-tint:   #eef1fe;   /* wash for current-nav, selection   */
+  --edit:          #b7791f;   /* amber for editable placeholders   */
+  --edit-bg:       #fdf6e7;
+
+  --serif: Tahoma, Verdana, "Segoe UI", Geneva, sans-serif;
+  --sans:  Tahoma, Verdana, "Segoe UI", Geneva, sans-serif;
+  --mono:  Tahoma, Verdana, "Segoe UI", Geneva, sans-serif;
+
+  --maxw: 780px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.62;
+  letter-spacing: -0.003em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: var(--accent-tint); }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover { color: var(--accent-strong); text-decoration: underline; text-underline-offset: 2px; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* ---------- Shared metadata / mono treatment ---------- */
+.mono,
+.nav-links a,
+.contact a,
+.entry-date,
+.entry-place,
+.entry-tag {
+  font-family: var(--mono);
+  font-variant-ligatures: none;
+}
+
+/* small-caps mono label used for structure */
+.label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+/* ---------- Nav ---------- */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(252, 252, 253, 0.88);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(150%) blur(10px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0.7rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.nav-brand {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.02rem;
+  color: var(--ink);
+  letter-spacing: 0;
+}
+.nav-brand:hover { text-decoration: none; color: var(--accent); }
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.15rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+.nav-links a {
+  color: var(--faint);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-bottom: 2px;
+  border-bottom: 1.5px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.nav-links a:hover { color: var(--ink); text-decoration: none; }
+.nav-links a.is-current {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 1.5rem 4.5rem;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 1.5rem 0 0rem;
+}
+.hero-photo {
+  width: 124px;
+  height: 124px;
+  border-radius: 18px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--rule-strong);
+  box-shadow: 0 1px 0 #fff, 0 6px 22px -12px rgba(22, 24, 29, 0.35);
+}
+.hero-body { min-width: 0; }
+.hero-name {
+  font-family: var(--serif);
+  font-size: clamp(2.1rem, 5vw, 2.7rem);
+  line-height: 1.08;
+  margin: 0 0 0.5rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.hero-role {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.01em;
+}
+.hero-thesis {
+  font-family: var(--sans);
+  font-size: 1.08rem;
+  font-style: normal;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0 0 1.15rem;
+  max-width: 52ch;
+}
+
+.contact {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0;
+  margin: 0 0 1.25rem;
+  padding: 0;
+}
+.contact a {
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  padding: 0 0.85rem;
+  border-right: 1px solid var(--rule-strong);
+  transition: color 0.15s ease;
+}
+.contact li:first-child a { padding-left: 0; }
+.contact li:last-child a { border-right: none; }
+.contact a:hover { color: var(--accent); text-decoration: none; }
+
+/* ---------- Sections ---------- */
+.section {
+  padding-top: 2.75rem;
+  scroll-margin-top: 4.5rem;
+}
+.section > h2,
+.section summary > h2 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.35rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--rule-heading);
+}
+
+/* Collapsible section (Other Projects): native <details>, no JS */
+.collapsible summary {
+  list-style: none;
+  cursor: pointer;
+}
+.collapsible summary::-webkit-details-marker { display: none; }
+.collapsible summary h2::after {
+  content: "\25B8"; /* ▸ */
+  float: right;
+  color: var(--faint);
+  font-size: 1.05rem;
+}
+.collapsible[open] summary h2::after { content: "\25BE"; /* ▾ */ }
+.collapsible summary:hover h2 { color: var(--accent); }
+.section h3 {
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.55rem;
+}
+
+/* ---------- Entries (education / experience / projects) ---------- */
+/* Items are separated by a centered hairline at 90% width, lighter than
+   the full-width rule under each section title so the two read as
+   different levels. No divider above the first item. */
+.entry,
+.pub {
+  position: relative;
+  padding: 1rem 0;
+}
+.entry:not(:first-of-type)::after,
+.pub:not(:first-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5%;
+  width: 90%;
+  height: 1px;
+  background: var(--rule);
+}
+.entry:first-of-type,
+.pub:first-child { padding-top: 0.25rem; }
+.entry:last-child,
+.pub:last-child { padding-bottom: 0.25rem; }
+.entry-head,
+.entry-sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+.entry-head { margin-bottom: 0.1rem; }
+.entry-title {
+  font-weight: 600;
+  font-size: 1.03rem;
+  letter-spacing: -0.005em;
+}
+.entry-title a { color: var(--ink); }
+.entry-title a:hover { color: var(--accent); }
+.entry-role { color: var(--muted); font-weight: 500; }
+.entry-date,
+.entry-place {
+  color: var(--faint);
+  font-size: 0.74rem;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.entry-tag {
+  display: inline-block;
+  font-size: 0.64rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: #f1f3f6;
+  padding: 0.12rem 0.45rem;
+  border-radius: 4px;
+  vertical-align: 0.12em;
+  margin-left: 0.45rem;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+/* Date row: sits under the tag, right-aligned with it. */
+.entry-dateline {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.15rem;
+}
+.advisor {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-left: 0.35rem;
+}
+
+.bullets {
+  margin: 0.6rem 0 0;
+  padding-left: 0;
+  list-style: none;
+}
+.bullets li {
+  position: relative;
+  padding-left: 1.15rem;
+  margin: 0.4rem 0;
+}
+.bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0.05rem;
+  top: 0.72em;
+  width: 5px;
+  height: 5px;
+  background: var(--rule-strong);
+  border-radius: 1px;              /* tiny square — a "node", fits the systems theme */
+}
+
+/* ---------- Research interests ---------- */
+.interests {
+  margin: 0.5rem 0 0;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.interests li {
+  position: relative;
+  padding-left: 1.5rem;
+  color: var(--ink);
+}
+.interests li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}
+
+/* ---------- Awards ---------- */
+.award-group { margin-bottom: 1rem; }
+.award-group h3 { margin: 1rem 0 0.4rem; }
+.award-group .bullets { margin-top: 0.2rem; }
+
+/* ---------- Publications ---------- */
+.muted { color: var(--muted); }
+#pub-empty {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--faint);
+  padding: 0.85rem 1rem;
+  border: 1px dashed var(--rule-strong);
+  border-radius: 6px;
+}
+/* Numbers are drawn with a counter so they align with the dash at the left edge. */
+.pub-list { list-style: none; counter-reset: pub; padding-left: 0; margin: 0; }
+.pub { counter-increment: pub; padding-left: 1.5rem; }
+.pub::before {
+  content: counter(pub) ".";
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+.pub:first-child::before { top: 0.25rem; }
+.pub-title { font-weight: 600; }
+.pub-authors { font-size: 0.95rem; }
+.pub-venue { font-family: var(--mono); color: var(--muted); font-size: 0.8rem; }
+.pub-links { font-family: var(--mono); font-size: 0.78rem; margin-top: 0.2rem; }
+/* Collapsed per-publication summary: native <details>, no JS */
+.pub-details { margin-top: 0.4rem; }
+.pub-details summary {
+  list-style: none;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+}
+.pub-details summary::-webkit-details-marker { display: none; }
+.pub-details summary::before { content: "\25B8  "; }
+.pub-details[open] summary::before { content: "\25BE  "; }
+.pub-details summary:hover { text-decoration: underline; }
+
+.pub-summary { margin-top: 0.55rem; }
+.pub-summary p { margin: 0.3rem 0; font-size: 0.95rem; }
+.pub-label { font-weight: 600; }
+
+/* ---------- Editable placeholders ---------- */
+.placeholder {
+  background: var(--edit-bg);
+  border-left: 3px solid var(--edit);
+  border-radius: 0 5px 5px 0;
+  padding: 0.5rem 0.8rem;
+  color: #7a5a12;
+}
+.placeholder::before {
+  content: "✎ edit — ";
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--edit);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--rule);
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
+}
+.site-footer a { color: var(--muted); }
+.site-footer a:hover { color: var(--accent); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  body { font-size: 16px; }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.25rem;
+    padding-top: 2.25rem;
+  }
+  .hero-thesis { max-width: none; }
+  .contact { justify-content: center; }
+  .contact li:first-child a { padding-left: 0.85rem; }
+  .nav-brand { display: none; }
+  .nav-inner { justify-content: center; }
+  .entry-head,
+  .entry-sub { flex-direction: column; gap: 0; }
+  .entry-date,
+  .entry-place { white-space: normal; margin-top: 0.05rem; }
+  .entry-dateline { justify-content: flex-start; }
+  .entry-head .entry-tag { margin-left: 0; margin-top: 0.1rem; }
+}
+
+/* ---------- Print (clean résumé-style output) ---------- */
+@media print {
+  .site-nav, .site-footer { display: none; }
+  .placeholder { background: none; border: none; padding: 0; color: var(--muted); }
+  .placeholder::before { content: none; }
+  a { color: var(--ink); text-decoration: none; }
+  body { font-size: 11pt; background: #fff; }
+  .entry-tag { background: none; border: 1px solid var(--rule-strong); }
+}
